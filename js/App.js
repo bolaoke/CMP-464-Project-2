@@ -68,12 +68,15 @@ function App() {
                 </div>
 
 
-                <button id="restartBtn" onClick="location.reload()">Restart</button>
+                <button id="restartBtn" onClick={onRestartClick}>Restart</button>
             </div>
         </div>
 
     )
 
+    function onRestartClick() {
+        location.reload()
+    }
 }
 
 ReactDOM.render(<App />, root)
