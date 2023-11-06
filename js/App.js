@@ -68,8 +68,8 @@ function App() {
                 </div>
 
 
-                <button id="restartBtn" onClick={onRestartClick}>Restart</button>
             </div>
+            <button id="restartBtn" onClick={onRestartClick}>Restart</button>
         </div>
 
     )
