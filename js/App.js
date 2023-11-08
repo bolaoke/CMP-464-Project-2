@@ -23,7 +23,7 @@ function App() {
             )
                 winner = board[combo[0]]
         })
-        return winner ? winner : board.includes('') ? null : "T"
+        return winner ? winner : board.includes('') ? null : 'T'
     }
     function handleTurn(event) {
         // alert("clicked")
@@ -35,21 +35,26 @@ function App() {
         let newBoard = [...board]
         newBoard[idx] = turn
         setBoard(newBoard)
-        let nextTurn = turn === 'X' ? '0' : 'X'
+        let nextTurn = turn === 'X' ? '0' : 'X' 
         setTurn(nextTurn)
         let whoWon = getWinner()
         setWin(whoWon)
     }
     function Message() {
-        let message = win === 'T' ? 'That is a tie , queen!' : win ? '${win} wins the game!' : 'It is ${turn}s turn!'
-        return <h2>{message}</h2>
-    }
+        let message =
+            win === 'T' ? `That's a tie, queen!`
+                : win
+                    ? `${win} wins the game!`
+                    : `It's ${turn}'s turn to play game`
 
+        return <h2>{message}</h2>
+
+    }
 
     return (
         <div>
-            <h1>Tic-React-Toe!</h1>
-            <h2>It's X turn</h2>
+            <h1>Tic-React-Toe</h1>
+
             <Message />
             <div className="flex-container flex-column">
                 <div

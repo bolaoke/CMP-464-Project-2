@@ -20,7 +20,7 @@ function checkWinX(arr) {
     }
     return false; // X has not won
   }
-function checkWinO(arr) {
+ function checkWinO(arr) {
     for (const combo of winCombinations) {
       const [a, b, c] = combo;
       if (arr[a] === "O" && arr[b] === "O" && arr[c] === "O") {
@@ -38,13 +38,14 @@ let handleTurn = (event) => {
       return square === event.target
     })
 
-    board[idx] = turn
-
-    if (turn == 'x') {
-      turn = '0'
-    } else {
-      turn = 'x'
-    }
+   board[idx] = turn
+   if(turn =='x'){
+    turn = '0'
+   }else {
+    turn = 'x'
+   }
+    
+    
     render()
 
     const boardState = squares.map(e => e.innerText.toUpperCase())
@@ -68,7 +69,7 @@ let handleTurn = (event) => {
 
 
 /*Event Listener*/
-document.getElementById('board').addEventListener('click', handleTurn)
+//document.getElementById('board').addEventListener('click', handleTurn)
 // document.getElementById('board').addEventListener('click', function() {
 //   handleTurn;
 //   if ()
